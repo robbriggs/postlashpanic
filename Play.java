@@ -58,12 +58,17 @@ class Play implements Runnable
     // Create menu
     public void run()
     {
+
         menu = new JFrame();
         menu.setLocationByPlatform(true);
         menu.setLayout(null);
         menu.setTitle("Postlash Panic");
         menu.setVisible(true);
         menu.setDefaultCloseOperation(menu.EXIT_ON_CLOSE);
+
+        menu.setSize(800, 625);
+        menu.pack();
+        menu.setResizable(false);
 
         startbutton = new javax.swing.JButton();
         instructionbutton = new javax.swing.JButton();
@@ -126,10 +131,6 @@ class Play implements Runnable
         bg.setOpaque(true);
         menu.add(bg);
         bg.setBounds(0, 0, 800, 600);
-
-        menu.pack();
-        menu.setSize(800, 625);
-        menu.setResizable(false);
     }
 
     // When the start button is pressed, launch the game frame and hide other
@@ -171,7 +172,6 @@ class Play implements Runnable
     public void runGame()
     {
         w = new JFrame();
-
         w.addKeyListener(kl);
         w.setDefaultCloseOperation(w.EXIT_ON_CLOSE);
         w.setTitle("Postlash Panic");
