@@ -179,6 +179,9 @@ class Play implements Runnable
         w.setLayout(null);
         w.setLocationByPlatform(true);
         w.setVisible(true);
+        w.pack();
+        w.setSize(800, 625);
+        w.setResizable(false);
         // When the game has ended, display the "endgame" graphic depending
         // on the conditions.
         endgame = new EndGame( this );
@@ -276,12 +279,6 @@ class Play implements Runnable
 
         overflow.zOrder( 14 );
         w.setComponentZOrder( bg , new Integer( 19 ) );
-
-        w.pack();
-        w.setSize(800, 625);
-        
-        
-        w.setResizable(false);
 
         intro = new IntroThread(erik, ian, speech, this);
         intro.start();
